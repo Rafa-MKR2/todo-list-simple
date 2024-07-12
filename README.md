@@ -19,11 +19,11 @@ To get started with this project, follow these steps:
    npm install
    npm start
 
-Open http://localhost:3000 in your browser to view the working application.
+3. Open http://localhost:3000 in your browser to view the working application.
 
 
 
-2. **Login and password are static in the code:**
+4. **Login and password are static in the code:**
 
    ```bash
    Login: usuario@email.com
