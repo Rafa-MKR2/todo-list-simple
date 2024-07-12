@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grid, Button, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText, Paper } from "@mui/material"; // Importe Paper do MUI
-
+import { Container, Grid, Button, Dialog, DialogTitle, DialogActions, DialogContent, DialogContentText, Paper } from "@mui/material";
 import Form from "../components/Form";
 import FilterSortPanel from "../components/FilterSortPanel";
 import SearchBar from "../components/SearchBar";
@@ -17,11 +16,11 @@ const Home = () => {
     const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
     setTodos(savedTodos);
   }, []);
-
+  
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
+  
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
   };
@@ -37,7 +36,7 @@ const Home = () => {
     );
     setTodos(updatedTodos);
   };
-
+  
   const clearCompletedTodos = () => {
     setOpenDialog(true);
   };
@@ -75,13 +74,11 @@ const Home = () => {
           </Paper>
           <Paper style={{ padding: "1em", marginBottom: "1em" }}>
             <FilterSortPanel filter={filter} setFilter={setFilter} sort={sort} setSort={setSort} />
-          </Paper>
-          <Paper style={{ padding: "1em", marginBottom: "1em" }}>
             <SearchBar search={search} setSearch={setSearch} />
           </Paper>
           <Button
             fullWidth
-            variant="contained"
+            variant="outlined" // Altere para "outlined" para um estilo mais discreto
             color="secondary"
             onClick={clearCompletedTodos}
             style={{ marginBottom: "1em" }}
@@ -89,8 +86,16 @@ const Home = () => {
             Limpar Tarefas Concluídas
           </Button>
           <Dialog open={openDialog} onClose={handleCancelClear}>
-            <DialogTitle>Limpar Tarefas Concluídas</DialogTitle>
-            <DialogContent>
+            <Button
+            fullWidth
+            variant="contained"
+            color="primary"  // Alterado para primary para usar a cor azul padrão do Material-UI
+            onClick={clearCompletedTodos}
+            style={{ marginBottom: "1em" }}
+              >
+            Limpar Tarefas Concluídas
+          </Button>            
+          <DialogContent>
               <DialogContentText>
                 Tem certeza de que deseja limpar todas as tarefas concluídas?
               </DialogContentText>
@@ -107,7 +112,6 @@ const Home = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper style={{ padding: "1em" }}>
-            {/* Passando os props atualizados para o TodoList */}
             <TodoList todos={filteredTodos} editTodo={editTodo} deleteTodo={deleteTodo} />
           </Paper>
         </Grid>
