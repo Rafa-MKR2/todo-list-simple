@@ -21,3 +21,10 @@ To get started with this project, follow these steps:
 
 Abra http://localhost:3000 no seu navegador para visualizar o aplicativo em funcionamento.
 
+
+
+2. **Login e senha estão estaticos:**
+
+   ```bash
+   Login: usuario@email.com
+   password: senha123
