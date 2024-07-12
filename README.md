@@ -13,17 +13,17 @@ To get started with this project, follow these steps:
    cd todo-list-app
 
 
-2. **Instale as dependências:**
+2. **Install dependencies:**
 
    ```bash
    npm install
    npm start
 
-Abra http://localhost:3000 no seu navegador para visualizar o aplicativo em funcionamento.
+Open http://localhost:3000 in your browser to view the working application.
 
 
 
-2. **Login e senha estão estaticos:**
+2. **Login and password are static in the code:**
 
    ```bash
    Login: usuario@email.com
